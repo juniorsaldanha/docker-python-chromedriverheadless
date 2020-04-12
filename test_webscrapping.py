@@ -1,7 +1,3 @@
-"""
-A simple selenium test example written by python
-"""
-
 import unittest
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
