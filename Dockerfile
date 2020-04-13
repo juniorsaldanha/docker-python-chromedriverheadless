@@ -14,10 +14,21 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 # install selenium
 RUN pip install selenium
 
-# copy test file
+# create folder app
 RUN mkdir /app
+# copy test file
 COPY test_webscrapping.py /app
-CMD python /app/test_webscrapping.py
+
+# go to your directory of project remove # the following line to copy your projecto to the container.
+#COPY . /app
+
+#if you need to use some differents libs , use 
+#RUN pip install -r requirements.txt
+#or if you dont have requirements.txt file user the following example (try to use always requirements.txt)
+#pip install numpy
+
+# change yourscriptname for the name of your python file.
+#CMD python /app/yourscriptname.py
 
 # set display port to avoid crash
 ENV DISPLAY=:99
