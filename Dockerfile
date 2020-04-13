@@ -15,7 +15,7 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 RUN pip install selenium
 
 # copy test file
-RUN make /app
+RUN mkdir /app
 COPY test_webscrapping.py /app
 CMD python /app/test_webscrapping.py
 
