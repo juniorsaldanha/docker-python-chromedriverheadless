@@ -14,5 +14,10 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 # install selenium
 RUN pip install selenium
 
+# copy test file
+RUN make /app
+COPY test_webscrapping.py /app
+CMD python /app/test_webscrapping.py
+
 # set display port to avoid crash
 ENV DISPLAY=:99
